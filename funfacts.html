@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organic fun facts</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+  }
+
+  .fact-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  h2 {
+    color: #333;
+  }
+
+  p {
+    color: #666;
+  }
+
+  #newFactButton {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="fact-box" id="factBox">
+  <h2>Did You Know?</h2>
+  <p id="factText">Loading fun fact...</p>
+  <button id="newFactButton">Click here for a new fact</button>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const funFacts = [
+        "Organic chemistry is centered around carbon compounds. Carbon has unique bonding properties that allow it to form long chains and complex structures, making it the backbone of organic molecules.",
+        "Organic compounds are essential for life. They form the basis of biomolecules like proteins, carbohydrates, lipids, and nucleic acids, which are crucial for living organisms' structure and function.",
+        "Organic compounds can have isomers, which are molecules with the same molecular formula but different structural arrangements. This phenomenon contributes to the vast complexity and diversity of organic chemistry.",
+        "Carbon can form single, double, and triple bonds with other atoms, leading to a vast array of organic compounds with diverse properties and functions",
+        "Organic compounds can have isomers, which are molecules with the same molecular formula but different structural arrangements. This phenomenon contributes to the vast complexity and diversity of organic chemistry.",
+        "Aromatic compounds, such as benzene, have unique ring structures and exhibit special stability and reactivity properties, playing a significant role in organic synthesis and industry",
+        "Functional groups are specific arrangements of atoms within organic molecules that determine their chemical properties and reactivity. Examples include hydroxyl (-OH), carbonyl (C=O), and amino (-NH2) groups.",
+        "Organic compounds can be found in nature (natural products) or synthesized in laboratories (synthetic compounds). Both play crucial roles in fields like medicine, agriculture, and materials science.",
+        "Organic chemistry includes the study of polymers, which are large molecules composed of repeating units called monomers. Polymers have diverse applications, from plastics and fibers to biological macromolecules like DNA and proteins.",
+        "Modern organic chemistry emphasizes green and sustainable practices, aiming to minimize waste, reduce energy consumption, and develop environmentally friendly processes and products."
+      ];
+
+      function displayRandomFact() {
+        var randomIndex = Math.floor(Math.random() * funFacts.length);
+        var randomFact = funFacts[randomIndex];
+        document.getElementById("factText").textContent = randomFact;
+      }
+
+      document.getElementById("newFactButton").addEventListener("click", displayRandomFact);
+
+      displayRandomFact();
+    });
+</script>
+</body>
+</html>
